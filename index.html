@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agência PretoDev | Criação de Sites e Identidade Visual</title>
+    <meta name="description" content="Transforme a presença digital do seu negócio. Especialistas em criação de websites, identidade visual e otimização Google Meu Negócio. Peça um orçamento.">
+    <meta name="keywords" content="criação de sites, agência web, identidade visual, google meu negócio, marketing digital, são paulo">
+    
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Satoshi', 'sans-serif'],
+                        'display': ['Satoshi', 'sans-serif'],
+                    },
+                    colors: {
+                        // Paleta Principal (Marrons)
+                        primary: {
+                            DEFAULT: '#986E55', // Seu Marrom Médio (Para botões e links)
+                            dark: '#885146',   // Seu Marrom mais escuro
+                        },
+                        // Paleta Secundária (Tons Escuros)
+                        secondary: {
+                            DEFAULT: '#47302B', // Seu Marrom Escuro (Para botões secundários)
+                            dark: '#2E2E3A',    // Seu Cinza/Azul Escuro
+                        },
+                        tertiary: {
+                            DEFAULT: '#1E88E5', // Coral Vibrante (Para destaques)
+                            dark: '#1565C0',    // Coral Escuro
+                        },
+                        // Paleta Neutra
+                        neutral: {
+                           '900': '#2E2E3A', // Cinza/Azul Escuro (Textos principais, Footer)
+                           '700': '#47302B', // Marrom Escuro (Títulos)
+                           '500': '#667085', // Cinza Médio (Textos secundários)
+                           '200': '#EAECF0', // Cinza Claro (Bordas)
+                           '100': '#F6F6F6', // Seu Fundo "Off-white"
+                           '50': '#F9FAFB', // Um cinza quase branco
+                           'white': '#FFFFFF'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Agência PretoDev",
+      "url": "https://www.suagenciapretodev.com.br",
+      "logo": "https://www.suagenciapretodev.com.br/logo.svg",
+      "telephone": "+55-11-99999-8888",
+      "priceRange": "$$$",
+      "description": "Agência de criação de websites e identidade visual focada em negócios locais.",
+       "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        body {
+            scroll-padding-top: 50px;
+        }
+    </style>
+</head>
+<body class="bg-neutral-white text-neutral-500 font-sans antialiased">
+
+    <header id="header" class="bg-neutral-white/80 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-neutral-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="#" class="flex items-center space-x-2" aria-label="Página inicial da Agência PretoDev">
+                     <svg class="h-8 w-auto text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                    <span class="font-display text-xl font-semibold text-neutral-900">Agência PretoDev</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#servicos" class="text-neutral-500 hover:text-primary transition-colors">Serviços</a>
+                    <a href="#planos" class="text-neutral-500 hover:text-primary transition-colors">Planos</a>
+                    <a href="#depoimentos" class="text-neutral-500 hover:text-primary transition-colors">Depoimentos</a>
+                    <a href="#contato" class="text-neutral-500 hover:text-primary transition-colors">Contato</a>
+                </nav>
+                <div class="hidden md:block">
+                    <a href="#contato" class="bg-primary text-neutral-white px-5 py-2.5 rounded-lg text-sm font-semibold shadow-sm hover:bg-primary-dark transition-all duration-200 ease-in-out">Pedir Orçamento</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" aria-label="Abrir menu" class="text-neutral-900">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-white border-t border-neutral-200">
+            <nav class="flex flex-col space-y-4 p-4">
+                <a href="#servicos" class="text-neutral-500 hover:text-primary transition-colors">Serviços</a>
+                <a href="#planos" class="text-neutral-500 hover:text-primary transition-colors">Planos</a>
+                <a href="#depoimentos" class="text-neutral-500 hover:text-primary transition-colors">Depoimentos</a>
+                <a href="#contato" class="text-neutral-500 hover:text-primary transition-colors">Contato</a>
+                <a href="#contato" class="bg-primary text-neutral-white text-center w-full mt-4 px-5 py-2.5 rounded-lg text-sm font-semibold shadow-sm hover:bg-primary-dark transition-all">Pedir Orçamento</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="pt-32 pb-20 bg-neutral-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div class="fade-in-up">
+                        <div class="inline-flex items-center bg-tertiary/10 text-tertiary font-semibold px-3 py-1 rounded-full text-sm mb-4">
+                           <svg class="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 0 2l-.15.08a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.38a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1 0-2l.15-.08a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            Foco em Negócios Locais
+                        </div>
+                        <h1 class="font-display text-4xl md:text-5xl font-semibold text-neutral-700 !leading-tight">
+                            O seu negócio (finalmente) online.
+                        </h1>
+                        <p class="mt-4 text-lg text-neutral-500">
+                            Atraia clientes da sua cidade, mostre seu profissionalismo e receba pedidos de orçamento 24h por dia com um site de alta performance.
+                        </p>
+                        <ul class="mt-6 space-y-2 text-neutral-500">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-tertiary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Seja encontrado no Google por clientes locais
+                            </li>
+                             <li class="flex items-center">
+                                <svg class="w-5 h-5 text-tertiary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Ganhe credibilidade com um design profissional
+                            </li>
+                             <li class="flex items-center">
+                                <svg class="w-5 h-5 text-tertiary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Receba contactos e orçamentos 24/7
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-tertiary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                Suporte dedicado para o seu negócio crescer
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#contato" class="bg-tertiary text-neutral-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:bg-primary-dark transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
+                                Peça um orçamento gratuito
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fade-in-up" style="transition-delay: 200ms;">
+                        <img 
+                            src="https://img.freepik.com/premium-photo/laptop-hand-bucket-list-with-woman-search-online-idea-trip-holiday-vacation-website-thinking-planning-with-female-looking-internet-adventure_590464-154754.jpg?w=740" 
+                            alt="[Imagem de um laptop mostrando um website moderno, com uma pessoa de negócios ao lado, num escritório profissional]"
+                            class="rounded-lg shadow-xl w-full h-auto object-cover"
+                            loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="py-20 bg-neutral-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="font-display text-3xl font-semibold text-neutral-700">Soluções Completas para a sua Presença Digital</h2>
+                <p class="mt-2 text-lg max-w-2xl mx-auto text-neutral-500">Do logótipo ao website, cuidamos de tudo para o seu negócio se destacar.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 text-left">
+                    <div class="bg-neutral-100 p-6 rounded-lg border border-neutral-200">
+                        <div class="bg-tertiary/10 text-tertiary w-12 h-12 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-neutral-900 mt-4">Criação de Identidade Visual</h3>
+                        <p class="mt-1 text-neutral-500">Criamos o seu logótipo, paleta de cores e design que representam a essência do seu negócio.</p>
+                    </div>
+                    <div class="bg-neutral-100 p-6 rounded-lg border border-neutral-200">
+                         <div class="bg-tertiary/10 text-tertiary w-12 h-12 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-neutral-900 mt-4">Otimização Google Meu Negócio</h3>
+                        <p class="mt-1 text-neutral-500">Colocamos a sua empresa no mapa. Essencial para clientes locais encontrarem o seu endereço e contacto.</p>
+                    </div>
+                    <div class="bg-neutral-100 p-6 rounded-lg border border-neutral-200">
+                         <div class="bg-tertiary/10 text-tertiary w-12 h-12 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-neutral-900 mt-4">Criação de Websites</h3>
+                        <p class="mt-1 text-neutral-500">Desenvolvemos sites rápidos, modernos e que funcionam perfeitamente em qualquer telemóvel.</p>
+                    </div>
+                    <div class="bg-neutral-100 p-6 rounded-lg border border-neutral-200">
+                         <div class="bg-tertiary/10 text-tertiary w-12 h-12 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-neutral-900 mt-4">Produção de Conteúdo (Blog)</h3>
+                        <p class="mt-1 text-neutral-500">Atraia clientes com artigos relevantes (SEO). Oferecemos pacotes mensais para manter o seu blog ativo.</p>
+                    </div>
+                    <div class="bg-neutral-100 p-6 rounded-lg border border-neutral-200">
+                         <div class="bg-tertiary/10 text-tertiary w-12 h-12 rounded-lg flex items-center justify-center">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-neutral-900 mt-4">Manutenção Mensal de Site</h3>
+                        <p class="mt-1 text-neutral-500">O seu site sempre seguro, rápido e atualizado. Focamo-nos na tecnologia para si.</p>
+                    </div>
+                    <div class="bg-neutral-100 p-6 rounded-lg border border-neutral-200">
+                         <div class="bg-tertiary/10 text-tertiary w-12 h-12 rounded-lg flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <h3 class="font-display text-xl font-semibold text-neutral-900 mt-4">Consultoria e Treinamento</h3>
+                        <p class="mt-1 text-neutral-500">Ensinamos-lhe a si ou à sua equipa a gerir o site e a aproveitar ao máximo a sua presença online.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="planos" class="py-20 bg-neutral-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="font-display text-3xl font-semibold text-neutral-700">Planos flexíveis para o seu negócio</h2>
+                <p class="mt-2 text-lg max-w-2xl mx-auto text-neutral-500">Escolha o ponto de partida ideal para o seu projeto.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 text-left">
+                    <div class="bg-neutral-white p-8 rounded-lg shadow-sm border border-neutral-200">
+                        <span class="font-semibold text-primary">PLANO ESSENCIAL</span>
+                        <h3 class="font-display text-2xl font-semibold text-neutral-900 mt-2">Landing Page</h3>
+                        <p class="text-neutral-500 mt-2">Ideal para começar e validar o seu negócio online.</p>
+                        <ul class="mt-6 space-y-3 text-neutral-500">
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Página Única de Alta Conversão</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Design Responsivo</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Formulário de Contacto</span></li>
+                        </ul>
+                        <a href="#contato" class="mt-8 inline-block w-full text-center bg-primary/10 text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">Pedir Orçamento</a>
+                    </div>
+                    
+                    <div class="bg-neutral-white p-8 rounded-lg shadow-xl border-2 border-primary relative">
+                        <span class="absolute top-0 -translate-y-1/2 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">MAIS POPULAR</span>
+                        <span class="font-semibold text-primary">PLANO NEGÓCIOS</span>
+                        <h3 class="font-display text-2xl font-semibold text-neutral-900 mt-2">Site Institucional</h3>
+                        <p class="text-neutral-500 mt-2">A solução completa para mostrar profissionalismo.</p>
+                        <ul class="mt-6 space-y-3 text-neutral-500">
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Até 5 Páginas (Início, Sobre, etc.)</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Integração com Blog</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Otimização Google Meu Negócio</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Benefício Exclusivo 2</span></li>
+                        </ul>
+                        <a href="#contato" class="mt-8 inline-block w-full text-center bg-primary text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-dark transition-colors">Pedir Orçamento</a>
+                    </div>
+
+                    <div class="bg-neutral-white p-8 rounded-lg shadow-sm border border-neutral-200">
+                        <span class="font-semibold text-primary">PLANO PREMIUM</span>
+                        <h3 class="font-display text-2xl font-semibold text-neutral-900 mt-2">E-commerce / Blog</h3>
+                        <p class="text-neutral-500 mt-2">Para quem quer vender online ou ser autoridade.</p>
+                        <ul class="mt-6 space-y-3 text-neutral-500">
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Loja Virtual Completa</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Pacote Mensal de Conteúdo</span></li>
+                            <li class="flex items-start"><span class="text-secondary mr-2 mt-1">✔</span><span>Consultoria de SEO</span></li>
+                        </ul>
+                        <a href="#contato" class="mt-8 inline-block w-full text-center bg-primary/10 text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary hover:text-white transition-colors">Pedir Orçamento</a>
+                    </div>
+                </div>
+
+                <div class="mt-16 max-w-3xl mx-auto bg-neutral-white p-8 rounded-lg shadow-lg border border-primary/20">
+                     <h3 class="font-display text-2xl font-semibold text-neutral-700">Oferta Especial: Hospedagem e Manutenção</h3>
+                    <p class="mt-2 text-neutral-500">Não se preocupe com a parte técnica. Deixe a hospedagem e a manutenção mensal connosco por um preço especial ao criar o seu site!</p>
+                    <a href="#contato" class="mt-6 inline-block bg-secondary text-white px-8 py-3 rounded-lg text-base font-semibold shadow-sm hover:bg-secondary-dark transition-all">
+                        Quero esta Oferta
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="depoimentos" class="py-20 bg-neutral-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="font-display text-3xl font-semibold text-neutral-700">Nossos clientes recomendam</h2>
+                <p class="mt-2 text-lg max-w-2xl mx-auto text-neutral-500">Veja o que dizem sobre a experiência com a nossa agência.</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 text-left">
+                    <div class="bg-neutral-100 p-8 rounded-lg shadow-sm">
+                        <div class="text-yellow-400 text-xl">★★★★★</div>
+                        <blockquote class="mt-4 text-neutral-700">
+                            "A minha empresa finalmente parece profissional. O site ficou rápido, bonito e já estou a receber contactos de clientes que me encontraram no Google."
+                        </blockquote>
+                        <div class="mt-6">
+                            <p class="font-semibold text-neutral-900">Roberto Almeida</p>
+                            <p class="text-sm text-neutral-500">Dono de Restaurante</p>
+                        </div>
+                    </div>
+                    <div class="bg-neutral-100 p-8 rounded-lg shadow-sm">
+                        <div class="text-yellow-400 text-xl">★★★★★</div>
+                        <blockquote class="mt-4 text-neutral-700">
+                            "Fiz toda a identidade visual com eles, do logótipo ao site. O atendimento foi 10/10 e o resultado superou as minhas expectativas! Recomendo."
+                        </blockquote>
+                        <div class="mt-6">
+                            <p class="font-semibold text-neutral-900">Camila Borges</p>
+                            <p class="text-sm text-neutral-500">Advogada</p>
+                        </div>
+                    </div>
+                    <div class="bg-neutral-100 p-8 rounded-lg shadow-sm">
+                        <div class="text-yellow-400 text-xl">★★★★★</div>
+                        <blockquote class="mt-4 text-neutral-700">
+                           "Não percebia porque o meu negócio não aparecia no mapa. A equipa otimizou o meu 'Google Meu Negócio' e em poucas semanas as ligações aumentaram muito!"
+                        </blockquote>
+                        <div class="mt-6">
+                            <p class="font-semibold text-neutral-900">Lucas Pereira</p>
+                            <p class="text-sm text-neutral-500">Dono de Barbearia</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-20 bg-neutral-100">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-xl mx-auto">
+                    <div class="text-center">
+                        <h2 class="font-display text-3xl font-semibold text-neutral-700">Vamos começar o seu projeto?</h2>
+                        <p class="mt-2 text-lg text-neutral-500">Preencha o formulário e a nossa equipa entrará em contato para criar um orçamento personalizado.</p>
+                    </div>
+                    <div id="form-container" class="mt-8 bg-neutral-white p-8 rounded-lg shadow-md">
+                        <form id="lead-form">
+                            <div class="space-y-6">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-neutral-700">Nome completo</label>
+                                    <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-neutral-200 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-neutral-700">E-mail</label>
+                                    <input type="email" id="email" name="email" required class="mt-1 block w-full px-3 py-2 border border-neutral-200 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-neutral-700">Telefone / WhatsApp</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="(XX) XXXXX-XXXX" class="mt-1 block w-full px-3 py-2 border border-neutral-200 rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                </div>
+                                <div>
+                                    <label for="treatment_interest" class="block text-sm font-medium text-neutral-700">Qual serviço ou plano tem interesse?</label>
+                                    <select id="treatment_interest" name="treatment_interest" class="mt-1 block w-full px-3 py-2 border border-neutral-200 bg-white rounded-lg shadow-sm focus:outline-none focus:ring-primary focus:border-primary">
+                                        <option value="">Selecione uma opção...</option>
+                                        <option value="plano_essencial">Plano Essencial (Landing Page)</option>
+                                        <option value="plano_negocios">Plano Negócios (Site)</option>
+                                        <option value="plano_premium">Plano Premium (E-commerce)</option>
+                                        <option value="identidade_visual">Identidade Visual</option>
+                                        <option value="google_meu_negocio">Google Meu Negócio</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                                <div class="flex items-start">
+                                    <input id="lgpd" name="lgpd" type="checkbox" required class="h-4 w-4 text-primary focus:ring-primary border-neutral-200 rounded mt-0.5">
+                                    <label for="lgpd" class="ml-3 block text-sm text-neutral-500">
+                                        Concordo em receber contato da agência para orçamento e informações, conforme a <a href="#" class="underline">Política de Privacidade</a>.
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="mt-8">
+                                <button type="submit" class="w-full bg-secondary text-white py-3 px-6 border border-transparent rounded-lg shadow-sm text-base font-medium hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary transition-all">
+                                    Enviar e Pedir Orçamento
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                     <div id="success-message" class="hidden mt-8 bg-green-100 border-l-4 border-green-500 text-green-700 p-4 rounded-lg" role="alert">
+                        <p class="font-bold">Obrigado!</p>
+                        <p>Recebemos sua solicitação. Em breve entraremos em contato para falar sobre o seu projeto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 bg-neutral-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="font-display text-3xl font-semibold text-neutral-700">Dúvidas Frequentes</h2>
+                    <p class="mt-2 text-lg text-neutral-500">Respostas para as perguntas mais comuns sobre nossos serviços.</p>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto space-y-6 text-left">
+                    <div class="border-b border-neutral-200 pb-4">
+                        <h3 class="font-semibold text-lg text-neutral-900">Quanto tempo demora para criar um site?</h3>
+                        <p class="mt-2 text-neutral-500">Uma Landing Page (Plano Essencial) pode levar de 1 a 2 semanas. Um Site Institucional (Plano Negócios) geralmente leva de 3 a 4 semanas, dependendo da complexidade e do recebimento do conteúdo (textos, imagens).</p>
+                    </div>
+                     <div class="border-b border-neutral-200 pb-4">
+                        <h3 class="font-semibold text-lg text-neutral-900">O que é Hospedagem e Manutenção?</h3>
+                        <p class="mt-2 text-neutral-500">A Hospedagem é o "aluguer" do espaço no servidor onde o seu site fica guardado. A Manutenção garante que ele esteja sempre seguro, rápido e atualizado, livre de vírus ou problemas técnicos.</p>
+                    </div>
+                     <div class="border-b border-neutral-200 pb-4">
+                        <h3 class="font-semibold text-lg text-neutral-900">O pagamento é único ou mensal?</h3>
+                        <p class="mt-2 text-neutral-500">A criação do site (design e desenvolvimento) é um pagamento único, que pode ser parcelado. Serviços contínuos como Manutenção, Hospedagem e Produção de Conteúdo para Blog são cobranças mensais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-neutral-900 text-neutral-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                     <a href="#" class="flex items-center space-x-2" aria-label="Página inicial da Agência Presence">
+                        <svg class="h-8 w-auto text-primary" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                        <span class="font-display text-xl font-semibold text-white">Agência PretoDev</span>
+                    </a>
+                    <p class="mt-4 text-neutral-500">A sua presença digital começa aqui.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Contato</h4>
+                    <ul class="mt-4 space-y-2 text-neutral-500">
+                        <li>São Paulo, SP</li>
+                        <li><a href="mailto:contato@suaagencia.com.br" class="hover:text-primary">contato@suaagencia.com.br</a></li>
+                        <li><a href="tel:+5511999998888" class="hover:text-primary">(11) 99999-8888</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white">Navegação</h4>
+                    <ul class="mt-4 space-y-2 text-neutral-500">
+                        <li><a href="#servicos" class="hover:text-primary">Serviços</a></li>
+                        <li><a href="#planos" class="hover:text-primary">Planos</a></li>
+                        <li><a href="#contato" class="hover:text-primary">Pedir Orçamento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-neutral-700 text-center text-sm text-neutral-500">
+                <p>&copy; <span id="current-year"></span> Agência Presence. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=5511999998888&text=Olá!%20Vi%20o%20site%20da%20agência%20e%20gostaria%20de%20um%20orçamento."
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Fale conosco pelo WhatsApp"
+       class="fixed bottom-20 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transform hover:scale-110 transition-all z-40">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.371-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01s-.521.074-.792.372c-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+    </a>
+
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-neutral-white p-3 border-t border-neutral-200 shadow-[0_-2px_10px_rgba(0,0,0,0.05)] z-40">
+        <a href="#contato" class="w-full block text-center bg-primary text-white py-3 px-4 rounded-lg font-semibold hover:bg-secondary-dark transition-colors">
+            Peça um orçamento gratuito
+        </a>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu on link click
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // Smooth Scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (this.getAttribute('href') === '#') return;
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        const headerOffset = document.getElementById('header').offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: "smooth"
+                        });
+                    }
+                });
+            });
+
+            // Form Submission Simulation
+            const leadForm = document.getElementById('lead-form');
+            const formContainer = document.getElementById('form-container');
+            const successMessage = document.getElementById('success-message');
+            leadForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formContainer.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                setInterval(() => {
+                    formContainer.classList.remove('hidden');
+                    successMessage.classList.add('hidden');
+                    leadForm.reset();
+                }, 3500);
+            });
+
+            // Phone Mask (BR format)
+            const phoneInput = document.getElementById('phone');
+            phoneInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                value = value.substring(0, 11);
+                if (value.length > 2) {
+                    value = `(${value.substring(0, 2)}) ${value.substring(2)}`;
+                }
+                if (value.length > 9) {
+                    value = `${value.substring(0, 10)}-${value.substring(10)}`;
+                }
+                e.target.value = value;
+            });
+
+            // Fade-in animation on scroll
+            const faders = document.querySelectorAll('.fade-in-up');
+            const appearOptions = {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+
+            // Current Year in Footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
